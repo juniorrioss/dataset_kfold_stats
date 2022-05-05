@@ -60,7 +60,7 @@ def balance_entity(destination, source, qtd, entity, normalize_qtd=True):
     try:
       # utiliza iloc() para pegar a linha correspondentes no dataset origem
       row = source.iloc[index]
-     
+
       # tenta remover a linha no dataset original
       source = source.drop(index)
       print(f"Dropped index: {index}")
@@ -68,7 +68,7 @@ def balance_entity(destination, source, qtd, entity, normalize_qtd=True):
       # tenta adicionar a linha no dataset de destino
       # esse comando só será executado caso a linha ainda não tenha sido transferida
       destination = destination.append(row, ignore_index=True)
-      
+
     except KeyError:
       # falha ao remover uma linha, normalmente por que a linha já foi removida
       # (2 tags que devem ser balanceadas presentes na mesma linha)
@@ -230,6 +230,8 @@ def realizar_correcao(dataset_train, dataset_dev, contagem_correcao, nomes_entid
   Retorno
   -------
   Retorna uma tupla contendo os subsets modificados.
+
+  
   """
   for correcao, entidade in zip(contagem_correcao, nomes_entidades):
     # passa amostras de treino pra dev
