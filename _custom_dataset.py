@@ -9,6 +9,8 @@ class Dataset():
     ou então generalizar as operações o suficiente para que isso
     seja desnecessário.
 
+    TODO: Escolher nomes mais descritivos para o módulo e para a classe
+
     Criada para auxiliar no balanceamento de datasets NER.
 
     Idealmente, a classe deve conseguir lidar com qualquer tipo
@@ -19,4 +21,3 @@ class Dataset():
         self.df = df
         self.text = df['text']
         self.tags = df['tags']
-        pass

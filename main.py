@@ -1,3 +1,4 @@
+import balanceamento
 import os
 from sklearn.model_selection import KFold
 from src import utils
@@ -85,6 +86,13 @@ for i, (train_index, test_index) in enumerate(kf.split(df)):
     utils.pandas2conll(test_data, save_path+'dev.conll')
     utils.pandas2json(train_data, save_path+'train.json')  # SAVE IN json
     utils.pandas2json(test_data, save_path+'dev.json')
+
+    # BALANCE AND REWRITE CONLL FILES
+    train_data, test_data = balanceamento.balance_from_conll(save_path+'train.conll',
+                                                             save_path+'dev.conll')
+    utils.pandas2conll(train_data, save_path+'train.conll')
+    utils.pandas2conll(test_data, save_path+'dev.conll')
+
     print(f'Save dataset and stats for fold-{i}')
 
 print('Done!')

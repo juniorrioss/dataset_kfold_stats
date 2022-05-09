@@ -45,9 +45,6 @@ def conll2pandas_group_by_token(path: str, sep=' ', only_last=True):
         path (str): filename (eg. dataset.conll)
         only_last (boolean): if set to True, only the last tag (label)
             will be put in the tags column.
-
-    Returns:
-        pandas.DataFrame: pandas DataFrame with text and tags cols
     """
 
     with open(path, 'r', encoding='UTF8') as f:
