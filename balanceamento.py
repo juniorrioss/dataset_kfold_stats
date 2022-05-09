@@ -261,7 +261,7 @@ def balance_from_dataframe(train_dataframe, test_dataframe):
     -------
     balanced_train : pandas.DataFrame
 
-    balanced_test : Pandas.DataFrame
+    balanced_test : pandas.DataFrame
 
     TODO: Garantir que somente essa função precise ser chamada para realizar o balanceamento.
 
@@ -285,7 +285,7 @@ def balance_from_conll(path_to_train: str, path_to_test: str):
     -------
     balanced_train : pandas.DataFrame
 
-    balanced_test : Pandas.DataFrame
+    balanced_test : pandas.DataFrame
 
     """
     # Dataframe token -> tag
