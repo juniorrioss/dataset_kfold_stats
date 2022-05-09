@@ -230,8 +230,6 @@ def __realizar_correcao(dataset_train, dataset_test, contagem_correcao, nomes_en
     Retorno
     -------
     Retorna uma tupla contendo os subsets modificados.
-
-
     """
     for correcao, entidade in zip(contagem_correcao, nomes_entidades):
         # passa amostras de treino pra test
